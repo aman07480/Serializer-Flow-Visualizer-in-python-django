@@ -23,3 +23,16 @@ class SerializerTestView(APIView):
             })
 
         return Response(serializer.errors)
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .flow_logger import get_logs, total_steps
+
+
+@api_view(["GET"])
+def last_serializer_flow(request):
+
+    return Response({
+        "total_steps": total_steps(),
+        "flow": get_logs()
+    })

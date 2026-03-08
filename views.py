@@ -36,3 +36,26 @@ def last_serializer_flow(request):
         "total_steps": total_steps(),
         "flow": get_logs()
     })
+
+from .flow_logger import log_step
+
+class SerializerTestView(APIView):
+
+    def post(self, request):
+
+        clear_logs()
+
+        log_step("Request Received", request.data)
+
+        serializer = ProductSerializer(data=request.data)
+
+        if serializer.is_valid():
+
+            data = serializer.save()
+
+            return Response({
+                "result": data,
+                "flow": get_logs()
+            })
+
+        return Response(serializer.errors)

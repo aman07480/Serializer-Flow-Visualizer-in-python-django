@@ -1,0 +1,16 @@
+{
+ "result":{
+   "name":"Laptop",
+   "price":50000
+ },
+ "execution_time":0.003,
+ "flow":[
+   {"step":"Request Received"},
+   {"step":"Serializer Initialized"},
+   {"step":"Validation Started"},
+   {"step":"Validation Success"},
+   {"step":"Create Method Called"},
+   {"step":"Serialization Finished"},
+   {"step":"Response Generated"}
+ ]
+}   

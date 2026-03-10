@@ -3,6 +3,7 @@ from rest_framework.response import Response
 
 from .serializers import ProductSerializer
 from .flow_logger import get_logs, clear_logs
+from .flow_logger import get_total_time
 
 
 class SerializerTestView(APIView):
@@ -59,3 +60,4 @@ class SerializerTestView(APIView):
             })
 
         return Response(serializer.errors)
+        

@@ -15,3 +15,11 @@ class SerializerFlowLog(models.Model):
     step = models.CharField(max_length=200)
     data = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+def validate_name(self, value):
+
+    from .flow_logger import log_step
+
+    log_step("Validating Field: name", value)
+
+    return value

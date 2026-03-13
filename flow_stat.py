@@ -10,7 +10,7 @@ def get_flow_stats():
     error_count = sum(1 for l in logs if l["status"] == "ERROR")
 
     return {
-        "total_steps": total_steps,
+        push : total_steps,
         "success_steps": success_count,
         "error_steps": error_count
     }

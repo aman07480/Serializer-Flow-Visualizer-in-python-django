@@ -25,3 +25,15 @@ urlpatterns = [
     path("serializer-flow-clear/", clear_serializer_logs),
 
 ]
+
+from .views import flow_stats_view, flow_by_id, export_flow_view
+
+urlpatterns += [
+
+    path("flow-stats/", flow_stats_view),
+
+    path("flow/<str:flow_id>/", flow_by_id),
+
+    path("flow-export/", export_flow_view),
+
+]

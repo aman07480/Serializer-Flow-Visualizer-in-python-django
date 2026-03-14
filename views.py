@@ -61,3 +61,11 @@ class SerializerTestView(APIView):
 
         return Response(serializer.errors)
         
+@api_view(["GET"])
+def export_flow_view(request):
+
+    data = export_flow_logs()
+
+    return Response({
+        "exported_logs": data
+    })

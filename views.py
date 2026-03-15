@@ -69,3 +69,13 @@ def export_flow_view(request):
     return Response({
         "exported_logs": data
     })
+
+@api_view(["GET"])
+def flow_by_id(request, flow_id):
+
+    logs = filter_by_flow_id(flow_id)
+
+    return Response({
+        "flow_id": flow_id,
+        "logs": logs
+    })

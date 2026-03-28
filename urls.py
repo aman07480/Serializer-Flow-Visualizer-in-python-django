@@ -37,3 +37,21 @@ urlpatterns += [
     path("flow-export/", export_flow_view),
 
 ]
+
+from .views import (
+    flow_dashboard_view,
+    flow_replay_view,
+    flow_ai_analysis_view,
+    flow_timeline_view,
+    flow_html_view
+)
+
+urlpatterns += [
+
+    path("flow-dashboard/", flow_dashboard_view),
+    path("flow-replay/", flow_replay_view),
+    path("flow-ai-analysis/", flow_ai_analysis_view),
+    path("flow-timeline/", flow_timeline_view),
+    path("flow-html/", flow_html_view),
+
+]
